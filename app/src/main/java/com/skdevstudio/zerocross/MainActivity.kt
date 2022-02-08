@@ -68,6 +68,7 @@ class MainActivity : AppCompatActivity() {
                 xClicked = true
                 gameState[i] = 1
                 checkWin()
+                //test
             }
         }
     }
