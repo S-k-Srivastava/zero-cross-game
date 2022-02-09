@@ -111,35 +111,35 @@ class MainActivity : AppCompatActivity() {
     private fun checkWin() {
         if (gameActive) {
             if (gameState[0] == gameState[1] && gameState[1] == gameState[2] && gameState[2] != 2) {
-                Toast.makeText(this, "Won", Toast.LENGTH_SHORT).show()
+                whoWon(gameState[2])
                 gameActive = false
                 stopPlay()
             } else if (gameState[3] == gameState[4] && gameState[4] == gameState[5] && gameState[5] != 2) {
-                Toast.makeText(this, "Won", Toast.LENGTH_SHORT).show()
+                whoWon(gameState[5])
                 gameActive = false
                 stopPlay()
             } else if (gameState[6] == gameState[7] && gameState[7] == gameState[8] && gameState[8] != 2) {
-                Toast.makeText(this, "Won", Toast.LENGTH_SHORT).show()
+                whoWon(gameState[8])
                 gameActive = false
                 stopPlay()
             } else if (gameState[0] == gameState[3] && gameState[3] == gameState[6] && gameState[6] != 2) {
-                Toast.makeText(this, "Won", Toast.LENGTH_SHORT).show()
+                whoWon(gameState[6])
                 gameActive = false
                 stopPlay()
             } else if (gameState[1] == gameState[4] && gameState[4] == gameState[7] && gameState[7] != 2) {
-                Toast.makeText(this, "Won", Toast.LENGTH_SHORT).show()
+                whoWon(gameState[7])
                 gameActive = false
                 stopPlay()
             } else if (gameState[2] == gameState[5] && gameState[5] == gameState[8] && gameState[8] != 2) {
-                Toast.makeText(this, "Won", Toast.LENGTH_SHORT).show()
+                whoWon(gameState[8])
                 gameActive = false
                 stopPlay()
             } else if (gameState[0] == gameState[4] && gameState[4] == gameState[8] && gameState[8] != 2) {
-                Toast.makeText(this, "Won", Toast.LENGTH_SHORT).show()
+                whoWon(gameState[8])
                 gameActive = false
                 stopPlay()
             } else if (gameState[2] == gameState[4] && gameState[4] == gameState[6] && gameState[6] != 2) {
-                Toast.makeText(this, "Won", Toast.LENGTH_SHORT).show()
+                whoWon(gameState[6])
                 gameActive = false
                 stopPlay()
             } else if (gameState[0] != 2 && gameState[1] != 2 && gameState[2] != 2 && gameState[3] != 2 && gameState[4] != 2 && gameState[5] != 2 && gameState[6] != 2 && gameState[7] != 2 && gameState[8] != 2) {
@@ -157,9 +157,9 @@ class MainActivity : AppCompatActivity() {
 
     private fun whoWon(gameState: Int) {
         if (gameState == 1) {
-            Toast.makeText(this, "x", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "X Won!", Toast.LENGTH_SHORT).show()
         } else {
-            Toast.makeText(this, "O", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "O Won!", Toast.LENGTH_SHORT).show()
         }
     }
 
