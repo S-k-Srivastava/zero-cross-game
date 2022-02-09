@@ -180,6 +180,14 @@
 
     </LinearLayout>
 
-
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/play"
+        android:id="@+id/playAgainBtn"
+        android:layout_marginHorizontal="80dp"
+        android:layout_marginTop="150dp"
+        android:background="@color/purple_500"
+        android:textColor="@color/white"/>
 
 </LinearLayout>
