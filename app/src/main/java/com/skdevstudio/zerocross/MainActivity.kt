@@ -157,9 +157,9 @@ class MainActivity : AppCompatActivity() {
 
     private fun whoWon(gameState: Int) {
         if (gameState == 1) {
-            Toast.makeText(this, "X Won!", Toast.LENGTH_SHORT).show()
+            binding.winnerText.text = "X is the Winner!"
         } else {
-            Toast.makeText(this, "O Won!", Toast.LENGTH_SHORT).show()
+            binding.winnerText.text = "O is the Winner!"
         }
     }
 
