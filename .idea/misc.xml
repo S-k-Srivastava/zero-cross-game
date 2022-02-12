@@ -5,7 +5,7 @@
       <map>
         <entry key="app/src/main/res/drawable/btn.xml" value="0.195" />
         <entry key="app/src/main/res/drawable/gridoutbox.xml" value="0.218" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.5" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1015" />
       </map>
     </option>

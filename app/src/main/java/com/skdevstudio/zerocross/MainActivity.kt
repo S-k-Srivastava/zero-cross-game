@@ -2,6 +2,7 @@ package com.skdevstudio.zerocross
 
 import android.graphics.drawable.Drawable
 import android.media.Image
+import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -20,6 +21,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var gameState: Array<Int>
     private var xClicked: Boolean = true
     private var gameActive: Boolean = true
+    var mMediaPlayer: MediaPlayer? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -69,12 +71,14 @@ class MainActivity : AppCompatActivity() {
                 xClicked = false
                 gameState[i] = 0
                 disableOnClickOnBoxes(i)
+                playSound(R.raw.o)
                 checkWin()
             } else {
                 img[i].setImageDrawable(getDrawable(R.drawable.x))
                 xClicked = true
                 gameState[i] = 1
                 disableOnClickOnBoxes(i)
+                playSound(R.raw.x)
                 checkWin()
                 //test
             }
@@ -144,6 +148,7 @@ class MainActivity : AppCompatActivity() {
                 stopPlay()
             } else if (gameState[0] != 2 && gameState[1] != 2 && gameState[2] != 2 && gameState[3] != 2 && gameState[4] != 2 && gameState[5] != 2 && gameState[6] != 2 && gameState[7] != 2 && gameState[8] != 2) {
                 Toast.makeText(this, "Match Draw", Toast.LENGTH_SHORT).show()
+                binding.winnerText.text = "Match Draw"
                 gameActive = false
                 stopPlay()
             }
@@ -158,12 +163,15 @@ class MainActivity : AppCompatActivity() {
     private fun whoWon(gameState: Int) {
         if (gameState == 1) {
             binding.winnerText.text = "X is the Winner!"
+            playSound(R.raw.win)
         } else {
             binding.winnerText.text = "O is the Winner!"
+            playSound(R.raw.win)
         }
     }
 
     private fun resetGame(){
+        playSound(R.raw.play)
         gameActive = true
         gameState = arrayOf(2,2,2,2,2,2,2,2,2)
         xClicked = true
@@ -175,6 +183,31 @@ class MainActivity : AppCompatActivity() {
         }
         startPlay()
     }
+
+
+
+    fun playSound(resId : Int) {
+        stopSound()
+        if (mMediaPlayer == null) {
+            mMediaPlayer = MediaPlayer.create(this, resId)
+            mMediaPlayer!!.start()
+        } else mMediaPlayer!!.start()
+    }
+    fun stopSound() {
+        if (mMediaPlayer != null) {
+            mMediaPlayer!!.stop()
+            mMediaPlayer!!.release()
+            mMediaPlayer = null
+        }
+    }
+    override fun onStop() {
+        super.onStop()
+        if (mMediaPlayer != null) {
+            mMediaPlayer!!.release()
+            mMediaPlayer = null
+        }
+    }
+
 
 }
 
