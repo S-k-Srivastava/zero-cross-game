@@ -1,17 +1,17 @@
 package com.skdevstudio.zerocross
 
-import android.graphics.drawable.Drawable
-import android.media.Image
 import android.media.MediaPlayer
-import androidx.appcompat.app.AppCompatActivity
+import android.opengl.Visibility
 import android.os.Bundle
+import android.util.DisplayMetrics
 import android.view.View
+import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.Toast
-import androidx.annotation.IdRes
+import androidx.appcompat.app.AppCompatActivity
 import com.skdevstudio.zerocross.databinding.ActivityMainBinding
-import java.text.FieldPosition
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -28,6 +28,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        fitToScreen()
+
 
         ll = arrayOf(
             binding.ll1,
@@ -53,15 +56,11 @@ class MainActivity : AppCompatActivity() {
         )
         gameState = arrayOf(2, 2, 2, 2, 2, 2, 2, 2, 2)
 
-        startPlay()
-
         binding.playAgainBtn.setOnClickListener {
             resetGame()
         }
 
     }
-
-
 
 
     private fun setOnClickOnBoxes(i: Int) {
@@ -71,6 +70,7 @@ class MainActivity : AppCompatActivity() {
                 xClicked = false
                 gameState[i] = 0
                 disableOnClickOnBoxes(i)
+                binding.winnerText.text = "X's Turn"
                 playSound(R.raw.o)
                 checkWin()
             } else {
@@ -78,16 +78,12 @@ class MainActivity : AppCompatActivity() {
                 xClicked = true
                 gameState[i] = 1
                 disableOnClickOnBoxes(i)
+                binding.winnerText.text = "0's Turn"
                 playSound(R.raw.x)
                 checkWin()
-                //test
             }
         }
     }
-
-
-
-
 
     private fun disableOnClickOnBoxes(i: Int) {
         ll[i].setOnClickListener(null)
@@ -102,15 +98,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun startPlay(){
+        binding.winnerText.text = "0's Turn"
         var i = 0
         while (i < 9) {
             setOnClickOnBoxes(i)
             i++
         }
     }
-
-
-
 
     private fun checkWin() {
         if (gameActive) {
@@ -184,8 +178,6 @@ class MainActivity : AppCompatActivity() {
         startPlay()
     }
 
-
-
     fun playSound(resId : Int) {
         stopSound()
         if (mMediaPlayer == null) {
@@ -208,6 +200,14 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    private fun fitToScreen(){
+        val displayMetrics = DisplayMetrics()
+        windowManager.defaultDisplay.getMetrics(displayMetrics)
+        val height = displayMetrics.heightPixels
+        if(height < 1800){
+            binding.logo.visibility = View.GONE
+        }
+    }
 
 }
 

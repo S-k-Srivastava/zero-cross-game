@@ -2,4 +2,5 @@
     <string name="app_name">Zero Cross</string>
     <string name="play">Play</string>
     <string name="winner">Winner :</string>
+    <string name="start_game">Tap Play Button To Start Game</string>
 </resources>
