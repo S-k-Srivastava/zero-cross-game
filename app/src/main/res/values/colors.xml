@@ -9,4 +9,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="accentMain">#9120BC</color>
     <color name="bw">@color/white</color>
+    <color name="accentTint">#1A6200EE</color>
 </resources>

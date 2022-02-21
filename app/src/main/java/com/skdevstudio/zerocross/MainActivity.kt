@@ -1,5 +1,7 @@
 package com.skdevstudio.zerocross
 
+import android.annotation.SuppressLint
+import android.content.Intent
 import android.media.MediaPlayer
 import android.opengl.Visibility
 import android.os.Bundle
@@ -11,6 +13,7 @@ import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.skdevstudio.zerocross.databinding.ActivityMainBinding
+import kotlin.properties.Delegates
 
 
 class MainActivity : AppCompatActivity() {
@@ -22,8 +25,10 @@ class MainActivity : AppCompatActivity() {
     private var xClicked: Boolean = true
     private var gameActive: Boolean = true
     var mMediaPlayer: MediaPlayer? = null
+    private var xScore : Int = 0
+    private var oScore : Int = 0
 
-
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -31,6 +36,16 @@ class MainActivity : AppCompatActivity() {
 
         fitToScreen()
 
+        binding.settings.setOnClickListener {
+            Toast.makeText(this, "UnderDevelopment", Toast.LENGTH_SHORT).show()
+        }
+
+        binding.computerMode.setOnClickListener {
+            xScore = 0
+            oScore = 0
+            binding.scores.text = "X : $xScore Vs 0 : $oScore"
+            Toast.makeText(this, "Game Scores Reset", Toast.LENGTH_SHORT).show()
+        }
 
         ll = arrayOf(
             binding.ll1,
@@ -63,6 +78,7 @@ class MainActivity : AppCompatActivity() {
     }
 
 
+    @SuppressLint("SetTextI18n", "UseCompatLoadingForDrawables")
     private fun setOnClickOnBoxes(i: Int) {
         ll[i].setOnClickListener {
             if (xClicked) {
@@ -154,12 +170,17 @@ class MainActivity : AppCompatActivity() {
 
 
 
+    @SuppressLint("SetTextI18n")
     private fun whoWon(gameState: Int) {
         if (gameState == 1) {
             binding.winnerText.text = "X is the Winner!"
+            xScore++
+            binding.scores.text = "X : ${xScore} Vs 0 : ${oScore}"
             playSound(R.raw.win)
         } else {
             binding.winnerText.text = "O is the Winner!"
+            oScore++
+            binding.scores.text = "X : ${xScore} Vs 0 : ${oScore}"
             playSound(R.raw.win)
         }
     }

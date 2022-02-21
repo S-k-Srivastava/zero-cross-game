@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "793516018712",
+    "project_id": "zero-cross-3384d",
+    "storage_bucket": "zero-cross-3384d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:793516018712:android:0080a71907a0021624c76d",
+        "android_client_info": {
+          "package_name": "com.skdevstudio.zerocross"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "793516018712-6c4o7g2vl0v66e6qnimpul2hkv774dlj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDUo52xcCMovwM4CPjyw8eZqJNlppJS0Eg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "793516018712-6c4o7g2vl0v66e6qnimpul2hkv774dlj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

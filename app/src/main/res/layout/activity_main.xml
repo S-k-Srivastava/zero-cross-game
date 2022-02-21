@@ -34,6 +34,47 @@
             android:textColor="@color/white"
             android:textSize="30sp"
             android:textStyle="bold" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:gravity="center_vertical|center_horizontal"
+            android:orientation="horizontal">
+            
+            <ImageButton
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:scaleY="1.3"
+                android:scaleX="1.3"
+                android:layout_weight="1"
+                android:id="@+id/settings"
+                android:layout_marginHorizontal="5dp"
+                android:src="@drawable/ic_baseline_settings_24"
+                android:background="@android:color/transparent"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/initial_score"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:id="@+id/scores"
+                android:layout_weight="1"
+                android:textColor="@color/white"
+                android:textStyle="bold"/>
+
+            <ImageButton
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:scaleY="1.3"
+                android:scaleX="1.3"
+                android:layout_weight="1"
+                android:id="@+id/computerMode"
+                android:layout_marginHorizontal="5dp"
+                android:src="@drawable/ic_baseline_refresh_24"
+                android:background="@android:color/transparent"/>
+
+
+        </LinearLayout>
 
     </LinearLayout>
 
@@ -248,7 +289,7 @@
         android:textAlignment="center"
         android:layout_marginBottom="25dp"
         android:textColor="@color/accentMain"
-        android:textSize="23sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         android:shadowColor="@color/accentMain"
         android:shadowDx="1"
