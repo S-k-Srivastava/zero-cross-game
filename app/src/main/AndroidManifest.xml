@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ZeroCross">
         <activity
+            android:name=".OnlineRoom"
+            android:exported="false" />
+        <activity
             android:name=".GoogleAuthentication"
             android:exported="false" />
         <activity
