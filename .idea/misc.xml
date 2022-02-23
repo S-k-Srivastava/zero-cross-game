@@ -7,6 +7,7 @@
         <entry key="app/src/main/res/drawable/btn.xml" value="0.195" />
         <entry key="app/src/main/res/drawable/circle.xml" value="0.195" />
         <entry key="app/src/main/res/drawable/gridoutbox.xml" value="0.218" />
+        <entry key="app/src/main/res/drawable/gridoutbox_highlight.xml" value="0.195" />
         <entry key="app/src/main/res/drawable/outerbox.xml" value="0.195" />
         <entry key="app/src/main/res/drawable/top.xml" value="0.195" />
         <entry key="app/src/main/res/drawable/topcurve.xml" value="0.195" />

@@ -126,34 +126,42 @@ class MainActivity : AppCompatActivity() {
         if (gameActive) {
             if (gameState[0] == gameState[1] && gameState[1] == gameState[2] && gameState[2] != 2) {
                 whoWon(gameState[2])
+                highlight_winPositions(0,1,2)
                 gameActive = false
                 stopPlay()
             } else if (gameState[3] == gameState[4] && gameState[4] == gameState[5] && gameState[5] != 2) {
                 whoWon(gameState[5])
+                highlight_winPositions(3,4,5)
                 gameActive = false
                 stopPlay()
             } else if (gameState[6] == gameState[7] && gameState[7] == gameState[8] && gameState[8] != 2) {
                 whoWon(gameState[8])
+                highlight_winPositions(6,7,8)
                 gameActive = false
                 stopPlay()
             } else if (gameState[0] == gameState[3] && gameState[3] == gameState[6] && gameState[6] != 2) {
                 whoWon(gameState[6])
+                highlight_winPositions(0,3,6)
                 gameActive = false
                 stopPlay()
             } else if (gameState[1] == gameState[4] && gameState[4] == gameState[7] && gameState[7] != 2) {
                 whoWon(gameState[7])
+                highlight_winPositions(1,4,7)
                 gameActive = false
                 stopPlay()
             } else if (gameState[2] == gameState[5] && gameState[5] == gameState[8] && gameState[8] != 2) {
                 whoWon(gameState[8])
+                highlight_winPositions(2,5,8)
                 gameActive = false
                 stopPlay()
             } else if (gameState[0] == gameState[4] && gameState[4] == gameState[8] && gameState[8] != 2) {
                 whoWon(gameState[8])
+                highlight_winPositions(0,4,8)
                 gameActive = false
                 stopPlay()
             } else if (gameState[2] == gameState[4] && gameState[4] == gameState[6] && gameState[6] != 2) {
                 whoWon(gameState[6])
+                highlight_winPositions(2,4,6)
                 gameActive = false
                 stopPlay()
             } else if (gameState[0] != 2 && gameState[1] != 2 && gameState[2] != 2 && gameState[3] != 2 && gameState[4] != 2 && gameState[5] != 2 && gameState[6] != 2 && gameState[7] != 2 && gameState[8] != 2) {
@@ -167,7 +175,6 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this, "Game Over!", Toast.LENGTH_SHORT).show()
         }
     }
-
 
 
     @SuppressLint("SetTextI18n")
@@ -187,6 +194,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun resetGame(){
         playSound(R.raw.play)
+        resetBackground()
         gameActive = true
         gameState = arrayOf(2,2,2,2,2,2,2,2,2)
         xClicked = true
@@ -230,19 +238,17 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    private fun highlight_winPositions(a : Int,b : Int,c : Int){
+        ll[a].setBackgroundResource(R.drawable.gridoutbox_highlight)
+        ll[b].setBackgroundResource(R.drawable.gridoutbox_highlight)
+        ll[c].setBackgroundResource(R.drawable.gridoutbox_highlight)
+    }
+    private fun resetBackground(){
+        var i = 0;
+        while(i < 9){
+            ll[i].setBackgroundResource(R.drawable.gridoutbox)
+            i++
+        }
+    }
+
 }
-
-//Ui sound Animations Computer
-
-//winPosition = arrayOf(
-//
-//arrayOf(1,2,3),
-//arrayOf(4,5,6),
-//arrayOf(7,8,9),
-//arrayOf(1,4,7),
-//arrayOf(2,5,8),
-//arrayOf(3,6,9),
-//arrayOf(1,5,9),
-//arrayOf(3,5,7)
-//
-//)

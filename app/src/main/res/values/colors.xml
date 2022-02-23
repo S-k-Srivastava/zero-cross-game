@@ -10,4 +10,5 @@
     <color name="accentMain">#9120BC</color>
     <color name="bw">@color/white</color>
     <color name="accentTint">#1A6200EE</color>
+    <color name="highlight">#A16B00FF</color>
 </resources>
