@@ -30,6 +30,10 @@ class SelectMode : AppCompatActivity() {
             finish()
         }
 
+        binding.onlineModeBtn.setOnClickListener {
+            startActivity(Intent(this,OnlineRoom::class.java))
+        }
+
 
     }
 }

@@ -7,4 +7,6 @@
     <string name="online_mode">Online Mode</string>
     <string name="offline_mode">Offline Mode</string>
     <string name="logout_button">logout Button</string>
+    <string name="join_room">Join Room</string>
+    <string name="create_room">Create Room</string>
 </resources>
