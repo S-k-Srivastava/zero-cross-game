@@ -1,19 +1,15 @@
 package com.skdevstudio.zerocross
 
 import android.annotation.SuppressLint
-import android.content.Intent
 import android.media.MediaPlayer
-import android.opengl.Visibility
 import android.os.Bundle
 import android.util.DisplayMetrics
 import android.view.View
-import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.skdevstudio.zerocross.databinding.ActivityMainBinding
-import kotlin.properties.Delegates
 
 
 class MainActivity : AppCompatActivity() {
@@ -27,6 +23,7 @@ class MainActivity : AppCompatActivity() {
     var mMediaPlayer: MediaPlayer? = null
     private var xScore : Int = 0
     private var oScore : Int = 0
+    private var isMute : Boolean = false
 
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,11 +33,17 @@ class MainActivity : AppCompatActivity() {
 
         fitToScreen()
 
-        binding.settings.setOnClickListener {
-            Toast.makeText(this, "UnderDevelopment", Toast.LENGTH_SHORT).show()
+        binding.muteBtn.setOnClickListener {
+            if(isMute){
+                isMute = false
+                binding.muteBtn.setImageResource(R.drawable.ic_baseline_volume_up_24)
+            }else{
+                isMute = true
+                binding.muteBtn.setImageResource(R.drawable.ic_baseline_volume_off_24)
+            }
         }
 
-        binding.computerMode.setOnClickListener {
+        binding.resetBtn.setOnClickListener {
             xScore = 0
             oScore = 0
             binding.scores.text = "X : $xScore Vs 0 : $oScore"
@@ -74,7 +77,7 @@ class MainActivity : AppCompatActivity() {
         binding.playAgainBtn.setOnClickListener {
             resetGame()
         }
-
+        resetGame()
     }
 
 
@@ -208,11 +211,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun playSound(resId : Int) {
-        stopSound()
-        if (mMediaPlayer == null) {
-            mMediaPlayer = MediaPlayer.create(this, resId)
-            mMediaPlayer!!.start()
-        } else mMediaPlayer!!.start()
+        if(!isMute){
+            stopSound()
+            if (mMediaPlayer == null) {
+                mMediaPlayer = MediaPlayer.create(this, resId)
+                mMediaPlayer!!.start()
+            } else mMediaPlayer!!.start()
+        }
     }
     fun stopSound() {
         if (mMediaPlayer != null) {

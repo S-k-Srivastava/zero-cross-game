@@ -11,18 +11,20 @@
         android:theme="@style/Theme.ZeroCross">
         <activity
             android:name=".OnlineRoom"
+            android:screenOrientation="portrait"
             android:exported="false" />
+
         <activity
-            android:name=".GoogleAuthentication"
-            android:exported="false" />
-        <activity
-            android:name=".SelectMode"
+            android:name=".HomeActivity"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".SplashScreen"
+            android:screenOrientation="portrait"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -8,6 +8,9 @@
         <entry key="app/src/main/res/drawable/circle.xml" value="0.195" />
         <entry key="app/src/main/res/drawable/gridoutbox.xml" value="0.218" />
         <entry key="app/src/main/res/drawable/gridoutbox_highlight.xml" value="0.195" />
+        <entry key="app/src/main/res/drawable/ic_baseline_settings_24.xml" value="0.195" />
+        <entry key="app/src/main/res/drawable/ic_baseline_volume_off_24.xml" value="0.195" />
+        <entry key="app/src/main/res/drawable/ic_baseline_volume_up_24.xml" value="0.195" />
         <entry key="app/src/main/res/drawable/outerbox.xml" value="0.195" />
         <entry key="app/src/main/res/drawable/top.xml" value="0.195" />
         <entry key="app/src/main/res/drawable/topcurve.xml" value="0.195" />
@@ -16,9 +19,10 @@
         <entry key="app/src/main/res/layout-normal/activity_main.xml" value="0.33" />
         <entry key="app/src/main/res/layout-small/activity_main.xml" value="0.18" />
         <entry key="app/src/main/res/layout/activity_google_authentication.xml" value="0.4074074074074074" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.5" />
+        <entry key="app/src/main/res/layout/activity_home.xml" value="0.21354166666666666" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="app/src/main/res/layout/activity_online_room.xml" value="0.4894613583138173" />
-        <entry key="app/src/main/res/layout/activity_select_mode.xml" value="0.4894613583138173" />
+        <entry key="app/src/main/res/layout/activity_select_mode.xml" value="0.2" />
         <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.4894613583138173" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1015" />
       </map>

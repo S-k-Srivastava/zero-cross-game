@@ -12,7 +12,7 @@ class SplashScreen : AppCompatActivity() {
         setContentView(R.layout.activity_splash_screen)
 
         Handler().postDelayed(Runnable {
-            val i = Intent(this, GoogleAuthentication::class.java)
+            val i = Intent(this, HomeActivity::class.java)
             startActivity(i)
             finish()
         }, 500)
